@@ -1,12 +1,15 @@
 package fourWayStreetLights.service;
 
+import fourWayStreetLights.util.Logger;
+import fourWayStreetLights.util.Logger.DebugLevel;
 
 public class StretLightsContext {
-	private StreetLightsStateI currentS;
+
 	private North northstate;
 	private South southstate;
 	private East eaststate;
 	private West weststate;
+	private StreetLightsStateI currentS = northstate;
 
 	public StretLightsContext() {
 		this.northstate = new North(this);
@@ -16,75 +19,78 @@ public class StretLightsContext {
 	}
 
 	public void action(String s) {
-		//System.out.print(s + "\n\n");
+		// System.out.print(s + "\n\n");
 		String[] result = s.split(":");
-		if ((result[1]).equals("NORTH")||((result[1]).equals("NORTH")&&result[0].equals("CAR")) ) {
+		if ((result[1]).equals("NORTH")
+				|| ((result[1]).equals("NORTH") && result[0].equals("CAR"))) {
+
 			currentS = northstate;
-			if((result[0]).equals("LIGHT")){		
-			currentS.signal(result[2]);}
-			if((result[0]).equals("CAR"))
-			{
-				if((northstate.sig).equals("GREEN")){
+
+			if ((result[0]).equals("LIGHT")) {
+				Logger.writeMessage("The Current STATE is NORTH",
+						DebugLevel.STATES);
+				currentS.signal(result[2]);
+			}
+			if ((result[0]).equals("CAR")) {
+				if ((northstate.sig).equals("GREEN")) {
 					currentS.carPass();
-				}
-				else
-				{
+				} else {
 					northstate.carWait();
 				}
 			}
-			}
-		else if((result[1]).equals("SOUTH")||((result[1]).equals("SOUTH")&&result[0].equals("CAR"))){
+		} else if ((result[1]).equals("SOUTH")
+				|| ((result[1]).equals("SOUTH") && result[0].equals("CAR"))) {
 			currentS = southstate;
-			if((result[0]).equals("LIGHT")){		
-			currentS.signal(result[2]);}
-			if((result[0]).equals("CAR"))
-			{
-				if((southstate.sig).equals("GREEN")){
+
+			if ((result[0]).equals("LIGHT")) {
+				Logger.writeMessage("The Current STATE is SOUTH",
+						DebugLevel.STATES);
+				currentS.signal(result[2]);
+			}
+			if ((result[0]).equals("CAR")) {
+				if ((southstate.sig).equals("GREEN")) {
 					currentS.carPass();
-				}
-				else
-				{
+				} else {
 					southstate.carWait();
 				}
 			}
-			
-		}
-		else if((result[1]).equals("EAST")||((result[1]).equals("EAST")&&result[0].equals("CAR"))){
+
+		} else if ((result[1]).equals("EAST")
+				|| ((result[1]).equals("EAST") && result[0].equals("CAR"))) {
 			currentS = eaststate;
-			if((result[0]).equals("LIGHT")){		
-			currentS.signal(result[2]);}
-			if((result[0]).equals("CAR"))
-			{
-				if((eaststate.sig).equals("GREEN")){
+			if ((result[0]).equals("LIGHT")) {
+				Logger.writeMessage("The Current STATE is EAST",
+						DebugLevel.STATES);
+				currentS.signal(result[2]);
+			}
+			if ((result[0]).equals("CAR")) {
+				if ((eaststate.sig).equals("GREEN")) {
 					currentS.carPass();
-				}
-				else
-				{
+				} else {
 					eaststate.carWait();
 				}
 			}
-			
-		}
-		else if((result[1]).equals("WEST")||((result[1]).equals("WEST")&&result[0].equals("CAR"))){
+
+		} else if ((result[1]).equals("WEST")
+				|| ((result[1]).equals("WEST") && result[0].equals("CAR"))) {
 			currentS = weststate;
-			if((result[0]).equals("LIGHT")){		
-			currentS.signal(result[2]);}
-			if((result[0]).equals("CAR"))
-			{
-				if((weststate.sig).equals("GREEN")){
+			if ((result[0]).equals("LIGHT")) {
+				Logger.writeMessage("The Current STATE is WEST",
+						DebugLevel.STATES);
+				currentS.signal(result[2]);
+			}
+			if ((result[0]).equals("CAR")) {
+				if ((weststate.sig).equals("GREEN")) {
 					currentS.carPass();
-				}
-				else
-				{
+				} else {
 					weststate.carWait();
 				}
 			}
-			
+
 		}
-	
-		
+
 	}
-	
+
 	@Override
 	public String toString() {
 		return currentS.toString();
@@ -129,7 +135,8 @@ public class StretLightsContext {
 	public void setWeststate(West weststate) {
 		this.weststate = weststate;
 	}
-	public String currentStateName(){
+
+	public String currentStateName() {
 		return this.currentS.toString();
 	}
 }
