@@ -1,0 +1,47 @@
+[The CURRENT STATE IS NORTH
+, The signal is GREEN for north direction
+, The car passes from the north direction
+, The car passes from the north direction
+, The signal is RED for north direction
+, The CURRENT STATE IS SOUTH
+, The signal is GREEN for SOUTH direction
+, The car waits on the north Signal
+, The car passes from the SOUTH direction
+, The car passes from the SOUTH direction
+, The signal is RED for SOUTH direction
+, The car waits on the SOUTH Signal
+, The car waits on the north Signal
+, The car waits on the north Signal
+, The CURRENT STATE IS NORTH
+, The signal is GREEN for north direction
+, The car waiting passes from the north direction
+, The car waiting passes from the north direction
+, The signal is RED for north direction
+, The car waits on the north Signal
+, The CURRENT STATE IS NORTH
+, The signal is GREEN for north direction
+, The car waiting passes from the north direction
+, The CURRENT STATE IS SOUTH
+, The signal is GREEN for SOUTH direction
+, The car waiting passes from the SOUTH direction
+, The car passes from the SOUTH direction
+, The signal is RED for SOUTH direction
+, The CURRENT STATE IS EAST
+, The signal is GREEN for east direction
+, The car passes from the east direction
+, The car passes from the east direction
+, The signal is RED for east direction
+, The car waits on the west Signal
+, The car waits on the east Signal
+, The car waits on the west Signal
+, The CURRENT STATE IS WEST
+, The signal is GREEN for west direction
+, The car waiting passes from the west direction
+, The car waiting passes from the west direction
+, The signal is RED for west direction
+, The CURRENT STATE IS EAST
+, The signal is GREEN for east direction
+, The car waiting passes from the east direction
+, The car passes from the east direction
+, The signal is RED for east direction
+]
