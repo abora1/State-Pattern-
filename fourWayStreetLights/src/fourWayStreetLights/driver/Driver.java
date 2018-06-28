@@ -4,7 +4,7 @@ package fourWayStreetLights.driver;
 import fourWayStreetLights.service.StretLightsContext;
 import fourWayStreetLights.util.FileProcessor;
 import fourWayStreetLights.util.Results;
-
+import fourWayStreetLights.util.Logger;
 public class Driver {
 	public static void main(String[] args) {
 		try{
@@ -15,9 +15,12 @@ public class Driver {
 				}
 				String abc = args[0];
 				String abc1 = args[1];
+				String a=args[2];
+				int q=Integer.parseInt(args[2]);
 				StretLightsContext sx=new StretLightsContext();
 				FileProcessor fp = new FileProcessor(abc);
 				Results rs = Results.Instance();
+				Logger.setDebugValue(q);
 				String s="";
 				while(s!=null){
 					s=fp.readline();
