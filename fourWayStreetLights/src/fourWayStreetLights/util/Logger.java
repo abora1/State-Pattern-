@@ -34,4 +34,3 @@ public class Logger{
 	return "The debug level has been set to the following " + debugLevel;
     }
 }
-

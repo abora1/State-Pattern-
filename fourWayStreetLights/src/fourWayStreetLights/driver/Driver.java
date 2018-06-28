@@ -3,9 +3,9 @@ package fourWayStreetLights.driver;
 
 import fourWayStreetLights.service.StretLightsContext;
 import fourWayStreetLights.util.FileProcessor;
-import fourWayStreetLights.util.Logger.DebugLevel;
-import fourWayStreetLights.util.Results;
 import fourWayStreetLights.util.Logger;
+import fourWayStreetLights.util.Results;
+
 public class Driver {
 	public static void main(String[] args) {
 		try{
@@ -16,7 +16,8 @@ public class Driver {
 				}
 				String abc = args[0];
 				String abc1 = args[1];
-				int q=Integer.parseInt(args[2]);
+				String a=args[2];
+ 				int q=Integer.parseInt(args[2]);
 				Logger.setDebugValue(q);
 				StretLightsContext sx=new StretLightsContext();
 				FileProcessor fp = new FileProcessor(abc);

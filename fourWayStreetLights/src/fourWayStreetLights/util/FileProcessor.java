@@ -1,7 +1,8 @@
 package fourWayStreetLights.util;
+
+import java.io.BufferedReader;
 import fourWayStreetLights.util.Logger;
 import fourWayStreetLights.util.Logger.DebugLevel;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
