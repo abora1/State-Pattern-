@@ -1,5 +1,6 @@
 package fourWayStreetLights.util;
-
+import fourWayStreetLights.util.Logger;
+import fourWayStreetLights.util.Logger.DebugLevel;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -14,6 +15,7 @@ public class FileProcessor {
 		try {
 			File f = new File(input);
 			br = new BufferedReader(new FileReader(f));
+			Logger.writeMessage("New Input File has Been Accepted",DebugLevel.FILE_PROCESSOR);
 
 		} catch (IOException e) {
 			System.out.println("No INPUT file Found");
