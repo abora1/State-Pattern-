@@ -1,16 +1,20 @@
 // FIXME: replace XYZ with the package name for the assignment
 package fourWayStreetLights.util;
 
+/**
+ * @author akshay
+ *this class stores different results in logs and then displays them according to the level specified
+ */
 public class Logger {
 
-	// FIXME: Add more enum values as needed for the assignment
+	//enums for the Levels
 	public static enum DebugLevel {
 		CONSTRUCTOR, FILE_PROCESSOR, NONE, STATES, STATE_ACTION
 	};
 
 	private static DebugLevel debugLevel;
 
-	// FIXME: Add switch cases for all the levels
+	// switch cases to handle different levels
 	public static void setDebugValue(int levelIn) {
 		switch (levelIn) {
 		case 4:
@@ -34,7 +38,7 @@ public class Logger {
 	public static void setDebugValue(DebugLevel levelIn) {
 		debugLevel = levelIn;
 	}
-
+//this method prints all the message to that debug level.
 	public static void writeMessage(String message, DebugLevel levelIn) {
 		if (levelIn == debugLevel)
 			System.out.println(message);

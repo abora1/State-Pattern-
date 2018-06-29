@@ -5,6 +5,10 @@ import fourWayStreetLights.util.FileProcessor;
 import fourWayStreetLights.util.Logger;
 import fourWayStreetLights.util.Results;
 
+/**
+ * @author akshay
+ *driver class handles all the objects and also provides command line verification
+ */
 public class Driver {
 	public static void main(String[] args) {
 		try {
@@ -16,8 +20,12 @@ public class Driver {
 			}
 			String abc = args[0];
 			String abc1 = args[1];
-			String a = args[2];
 			int q = Integer.parseInt(args[2]);
+			if(q>4 || q<1)
+			{
+				System.out.println("The Debug Value is out of scope it should be Between 1 And 4");
+				System.exit(0);
+			}
 			Logger.setDebugValue(q);
 			StretLightsContext sx = new StretLightsContext();
 			FileProcessor fp = new FileProcessor(abc);

@@ -1,5 +1,9 @@
 package fourWayStreetLights.service;
 
+/**
+ * @author akshay
+ *This is a state class which holds the EAST signal condition.
+ */
 public class East extends StreetStateBase {
 	protected String sig = "RED";
 	private int counter = 0;
@@ -8,7 +12,7 @@ public class East extends StreetStateBase {
 	public East(StretLightsContext context) {
 		this.ctx = context;
 	}
-
+	//this method checks the signal and then uses that to pass or wait cars
 	@Override
 	public void signal(String signal) {
 		if (sig.compareTo(signal) != 0) {
@@ -34,7 +38,7 @@ public class East extends StreetStateBase {
 			}
 		}
 	}
-
+	//if the signal is green the car can easily pass holding that the counter is not greater than 2
 	@Override
 	public void carPass() {
 
@@ -47,14 +51,14 @@ public class East extends StreetStateBase {
 			counter1 = 0;
 		}
 	}
-
+	//if there are more than 2 cars or if 2 cars have already passed then this method is used to hold these cars.
 	@Override
 	public void carWait() {
 		counter++;
 		lx.writeMessage("The car waits on the east Signal", dl.STATE_ACTION);
 		result.storeNewResult("The car waits on the east Signal\n");
 	}
-
+	//when 2 cars have passed the signal changes to red and the rest of the cars wait.
 	@Override
 	public void maxCars() {
 		sig = "RED";

@@ -7,6 +7,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * @author akshay
+ *this class processes the input file,Tests it for validation and then returns line by line to the user.
+ */
 public class FileProcessor {
 	public FileProcessor() {
 	}
@@ -33,7 +37,7 @@ public class FileProcessor {
 		}
 
 	}
-
+//this method returns a single line from the file to user.
 	public String readline() {
 		try {
 			String s = null;

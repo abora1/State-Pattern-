@@ -7,8 +7,12 @@ import java.util.ArrayList;
 
 import fourWayStreetLights.util.Logger.DebugLevel;
 
+/**
+ * @author akshay
+ *This class Stores the results of all the operations performed in the package.
+ */
 public class Results {
-	public ArrayList<String> resList = new ArrayList<>();
+	public ArrayList<String> resList = new ArrayList<String>();
 	// add strings to the ArrayList
 	private static Results resultI;
 
@@ -18,7 +22,7 @@ public class Results {
 		}
 		return resultI;
 	}
-
+//This method stores all the results in an array list and then writes them to file or STDDISPLAY
 	public void storeNewResult(String s) {
 		resList.add(s);
 	}

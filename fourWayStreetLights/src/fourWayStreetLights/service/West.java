@@ -1,5 +1,9 @@
 package fourWayStreetLights.service;
 
+/**
+ * @author akshay
+ *THis is a state class which refers to the WEST Signal.
+ */
 public class West extends StreetStateBase {
 	protected String sig = "RED";
 	private int counter = 0;
@@ -10,6 +14,7 @@ public class West extends StreetStateBase {
 	}
 
 	@Override
+	//this method checks the signal and then uses that to pass or wait cars
 	public void signal(String signal) {
 		if (sig.compareTo(signal) != 0) {
 			sig = signal;
@@ -34,7 +39,7 @@ public class West extends StreetStateBase {
 			}
 		}
 	}
-
+//if the signal is green the car can easily pass holding that the counter is not greater than 2
 	@Override
 	public void carPass() {
 
@@ -47,14 +52,14 @@ public class West extends StreetStateBase {
 			counter1 = 0;
 		}
 	}
-
+//if there are more than 2 cars or if 2 cars have already passed then this method is used to hold these cars.
 	@Override
 	public void carWait() {
 		counter++;
 		lx.writeMessage("The car waits on the west Signal", dl.STATE_ACTION);
 		result.storeNewResult("The car waits on the west Signal\n");
 	}
-
+//when 2 cars have passed the signal changes to red and the rest of the cars wait.
 	@Override
 	public void maxCars() {
 		sig = "RED";

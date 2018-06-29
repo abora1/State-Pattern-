@@ -3,6 +3,10 @@ package fourWayStreetLights.service;
 import fourWayStreetLights.util.Logger;
 import fourWayStreetLights.util.Logger.DebugLevel;
 
+/**
+ * @author akshay
+ *this context class handles all the user interactions and changes the signals or the cars status according to the current state of the system.
+ */
 public class StretLightsContext {
 
 	private North northstate;
@@ -17,7 +21,7 @@ public class StretLightsContext {
 		this.eaststate = new East(this);
 		this.weststate = new West(this);
 	}
-
+//this method reads string by string from the input file and then passes it to the appropriate state class and action.
 	public void action(String s) {
 		// System.out.print(s + "\n\n");
 		String[] result = s.split(":");
